@@ -188,29 +188,29 @@ class Application {
     private function index() {
         if ($this->data['signedin']) {
             $this->data['links'] = Link::get_for_user($this->data['userid']);
-            $view = '/views/dashboard.html';
+            $view = 'views/dashboard.html';
         } else {
-            $view = '/views/index.html';
+            $view = 'views/index.html';
         }
         
-        $template = new Template($view, '/views/layout.html');
+        $template = new Template($view, 'views/layout.html');
         echo $template->process($this->data);
     }
     
     private function link($link) {
-        $template = new Template('/views/link.html', '/views/layout.html');
+        $template = new Template('views/link.html', 'views/layout.html');
         $this->data = array_merge($this->data, get_object_vars($link));
         echo $template->process($this->data);
     }
     
     private function modify($link) {
-        $template = new Template('/views/modify.html', '/views/layout.html');
+        $template = new Template('views/modify.html', 'views/layout.html');
         $this->data = array_merge($this->data, get_object_vars($link));
         echo $template->process($this->data);
     }
     
     private function shorten() {
-        $template = new Template('/views/shorten.html', '/views/layout.html');
+        $template = new Template('views/shorten.html', 'views/layout.html');
         echo $template->process($this->data);
     }
     

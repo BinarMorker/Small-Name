@@ -1,0 +1,103 @@
+html, body {
+    height: 100%;
+}
+
+.button-collapse {
+    padding: 0 1rem;
+}
+
+.btn-floating-auto {
+    width: auto !important;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-radius: 55.5px;
+}
+
+.btn-floating-auto > .material-icons {
+    vertical-align: top;
+}
+
+.brand-img {
+    height: 64px;
+    vertical-align: bottom;
+    margin-left: -0.75rem;
+    margin-right: 1.25rem;
+}
+
+.no-margin-top {
+    margin-top: 0;
+}
+
+.no-hover:hover {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.full-height {
+    height: 100%;
+}
+
+.wrap {
+    word-break: break-all;
+    word-wrap: break-word;
+}
+
+.chip {
+    vertical-align: middle;
+    margin: 0;
+}
+
+.chip-no-background {
+    background: transparent;
+    color: inherit;
+}
+
+.select-wrapper span.caret {
+    color: inherit;
+}
+
+.btn-pad {
+    height: 4.25rem;
+    padding: 0;
+}
+
+.block {
+    width: 100%;
+}
+
+.card-action > a {
+    white-space: nowrap;
+}
+
+.card-action .material-icons {
+    vertical-align: bottom;
+}
+
+.inline-btn {
+    margin-bottom: 0.5rem;
+}
+
+@media only screen and (max-width: 992px) {
+    .chip {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .full-height {
+        padding-top: 1rem;
+        height: auto;
+    }
+    
+    .valign-wrapper {
+        display: block;
+        -webkit-align-items: inherit;
+        -ms-flex-align: inherit;
+        align-items: inherit;
+    }
+    
+    .btn-pad {
+        height: 3.25rem;
+        padding: 0 1rem 0 0;
+    }
+}

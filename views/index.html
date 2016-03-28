@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <form id="shorten-form" action="/shorten" method="POST">
+            <div class="col l10 m8 s12">
+                <nav>
+                    <div class="nav-wrapper light-blue lighten-2">
+                        <div class="input-field">
+                            <input id="shorten" name="shorten" type="search" required>
+                            <label for="shorten"><i class="material-icons">link</i></label>
+                            <i class="material-icons">close</i>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="col l2 m4 s12">
+                <button type="submit" class="btn-flat btn-pad block grey-text text-lighten-4">Shorten</button>
+            </div>
+        </form>
+    </div>
+</div>
+<div id="loading" style="display: none" class="container light-blue-text text-lighten-2">
+    <div class="progress black">
+        <div class="indeterminate grey darken-2"></div>
+    </div>
+</div>
+{if:error}
+<p class="flow-text center red-text text-lighten-2">{error}</p>
+{endif}

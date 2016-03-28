@@ -1,0 +1,16 @@
+Variable: {var}<br/>
+Simple IF: {if:bool}True{else}False{endif}<br/>
+IF NOT: {ifnot:bool}True{else}False{endif}<br/>
+IF == : {if:number==four}Number = 4!{endif}<br/>
+IF > : {if:number>three}Number > 3!{endif}<br/>
+IF <= : {if:one<=two}1 <= 2!{endif}<br/>
+IF != : {if:number!=two}Number != 2!{endif}<br/>
+Loop: 
+<ul>
+{loop:days}
+    <li>{name}</li>
+{endloop}
+</ul>
+PHP (should only show in the source): <?php echo "I am a random PHP thingy"; ?><br/>
+Page import: {import:page}<br/>
+Bad variable: {escape:badvar}

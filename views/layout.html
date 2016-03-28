@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Small Name</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/stylesheet.css">
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body class="grey darken-4">
+    <header>
+        {if:signedin}
+        <nav>
+            <div class="nav-wrapper light-blue lighten-2 row">
+                <a href="/" class="col brand-logo"><img class="brand-img hide-on-med-and-down" src="/logo.png">Small Name</a>
+                <ul class="right hide-on-med-and-down">
+                    <li>
+                        <a href="/shorten"><i class="material-icons left">link</i>Shorten a link</a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-button" data-beloworigin="true" data-activates='nav-dropdown'>
+                            <div class="chip chip-no-background gray-text text-lighten-4">
+                                <img src="{userimage}" alt="Avatar"> {useremail}
+                            </div>
+                            <i class="material-icons right">arrow_drop_down</i>
+                        </a>
+                        <ul id='nav-dropdown' class='dropdown-content'>
+                            <li>
+                                <a id="logout" href="/?logout">Log out</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            </div>
+        </nav>
+        <ul id="slide-out" class="side-nav">
+            <li class="no-hover">
+                <div class="chip truncate">
+                    <img src="https://lh3.googleusercontent.com/-Czt6sMd0tHw/AAAAAAAAAAI/AAAAAAAAAIo/7EUmRZBUh_A/photo.jpg?sz=64" alt="Avatar"> binarmorker@gmail.com
+                </div>
+            </li>
+            <li>
+                <a href="/shorten">Shorten a link</a>
+            </li>
+            <li>
+                <a href="/?logout">Log out</a>
+            </li>
+        </ul>
+        {endif}
+    </header>
+    {ifnot:signedin}
+    <section class="valign-wrapper full-height">
+        <div class="valign container">
+            <h1 class="center no-margin-top"><a href="/" class="grey-text text-lighten-2">Small Name</a></h1>
+    {else}
+    <section class="valign-wrapper">
+        <div class="valign container">
+    {endif}
+            {yield}
+        </div>
+    </section>
+    {ifnot:signedin}
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-floating-auto btn-large waves-effect waves-light red" href="{authurl}"><i class="material-icons">https</i>Sign in</a>
+    </div>
+    {endif}
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.4.0/clipboard.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+    <script>
+        $("#shorten-form").submit(function() {
+            $("#loading").show();
+        });
+        (function(){
+            new Clipboard('.copy-btn');
+        })();
+        $(".button-collapse").sideNav();
+        $("select").material_select();
+    </script>
+</body>
+
+</html>

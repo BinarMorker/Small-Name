@@ -1,0 +1,36 @@
+<div class="section light-blue-text text-lighten-2">
+    <h2>Modifying sml.name/{id}</h2>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <input class="grey-text" type="text" id="shorten" name="shorten" value="{url}">
+                    <label for="shorten">Url</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <select class="grey-text" id="expiration" name="expiration">
+                        <option value="24" {if:expiration="24h"}selected{endif}>24h</option>
+                        <option value="48" {if:expiration="48h"}selected{endif}>48h</option>
+                        <option value="168">1 week</option>
+                        <option value="336">2 weeks</option>
+                        <option value="-1">No expiration</option>
+                    </select>
+                    <label for="expiration">Expiration</label>
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <select class="grey-text" id="maxuses" name="maxuses">
+                        <option value="1">1 click</option>
+                        <option value="10">10 clicks</option>
+                        <option value="50">50 clicks</option>
+                        <option value="-1" selected>Unlimited clicks</option>
+                    </select>
+                    <label for="maxuses">Maximum clicks</label>
+                </div>
+            </div>
+            <button type="submit" class="btn block">Save</button>
+        </form>
+    </div>
+</div>
+{if:error}
+<p class="flow-text center red-text text-lighten-2">{error}</p>
+{endif}

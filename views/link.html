@@ -1,0 +1,37 @@
+<div class="section light-blue-text text-lighten-2">
+    {if:newlink}
+    <h4 class="center">Your link was shortened</h4>
+    {endif}
+    <div class="row">
+        <div class="col s12 l6">
+            <div class="card grey darken-3">
+                <div class="card-content grey-text text-lighten-2">
+                    <span class="card-title">sml.name/{id}</span> <a onclick="Materialize.toast('Link copied')" class="copy-btn inline-btn btn orange lighten-2 right" data-clipboard-text="sml.name/{id}">Copy</a>
+                    <p class="wrap">{url}</p>
+                </div>
+                <div class="card-action">
+                    {if:valid}
+                    <a class="light-blue-text text-lighten-2" href="/{id}"><i class="material-icons">link</i> Follow link</a>
+                    {else}
+                    <a class="red-text text-lighten-2"><i class="material-icons">close</i> {status}</a>
+                    {endif}
+                    {if:signedin}{if:userid==authorid}
+                    <!--<a class="yellow-text text-lighten-3" href="/link/{id}/modify"><i class="material-icons">edit</i> Modify</a>-->
+                    <a class="red-text text-lighten-1" href="/link/{id}/delete"><i class="material-icons">delete</i> Delete</a>
+                    {endif}{endif}
+                </div>
+            </div>
+        </div>
+        <div class="col s12 l6">
+            <div class="card grey darken-3">
+                <div class="card-content grey-text text-lighten-2">
+                    <span class="card-title">Information</span>
+                    <p>Creation: {creationtime}</p>
+                    <p>Expiration: {expirationtime}</p>
+                    <p>Redirections: {redirections} / {maxuses}</p>
+                    <p>Url status: {urlcode}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

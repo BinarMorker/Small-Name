@@ -17,6 +17,21 @@ html, body {
     vertical-align: top;
 }
 
+.card .card-action-indicator {
+    color: #ffab40;
+    transition: color .3s ease;
+    text-transform: uppercase;
+}
+
+.card .card-action-indicator .material-icons {
+    vertical-align: bottom;
+}
+
+.card-title {
+    display: inline-block;
+    margin-top: -10px;
+}
+
 .brand-img {
     height: 64px;
     vertical-align: bottom;

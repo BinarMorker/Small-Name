@@ -3,23 +3,30 @@
     <p class="flow-text center red-text text-lighten-2">{error}</p>
     {endif}
     <div class="row">
+        {if:links}
         {loop:links}
         <div class="col s12 m6">
-            <div class="card grey darken-3">
-                <div class="card-content grey-text text-lighten-2">
-                    <span class="card-title">sml.name/{id}</span>
-                    <p class="truncate">{url}</p>
+            <a href="/link/{id}">
+                <div class="card grey darken-3">
+                    <div class="card-content grey-text text-lighten-2">
+                        <span class="card-title">sml.name/{id}</span>
+                        {if:valid}
+                        <span class="light-green-text text-lighten-2 card-action-indicator right"><i class="material-icons">done</i> {status}</span>
+                        {else}
+                        <span class="red-text text-lighten-2 card-action-indicator right"><i class="material-icons">close</i> {status}</span>
+                        {endif}
+                        <p class="truncate">{url}</p>
+                    </div>
                 </div>
-                <div class="card-action">
-                    {if:valid}
-                    <a class="light-blue-text text-lighten-2" href="/{id}"><i class="material-icons">link</i> Follow link</a>
-                    {else}
-                    <a class="red-text text-lighten-2"><i class="material-icons">close</i> {status}</a>
-                    {endif}
-                    <a class="light-green-text text-lighten-2" href="/link/{id}"><i class="material-icons">done</i> Status</a>
-                </div>
-            </div>
+            </a>
         </div>
         {endloop}
+        {else}
+        <div class="col s12 m8 offset-m2 l6 offset-l3 center">
+            <p class="flow-text grey-text text-lighten-1">
+                You have nothing here yet. Get started by <a class="grey-text text-lighten-4" href="/shorten">shortening a link</a>!
+            </p>
+        </div>
+        {endif}
     </div>
 </div>
